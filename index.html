@@ -119,7 +119,7 @@
                                 <div class="top-info">
                                     <div class="info">
                                         <div class="name">
-                                            H5大疆登录
+                                            网页端免下载
                                         </div>
                                         <div class="link">
                                             <a href="javascript:;">
@@ -160,7 +160,7 @@
                     H5网页版登录
                   </span>
                 </a>
-                            <a class="btn" href="index.html#" id="kefu18">
+                            <a class="btn" href="index.html#" id="kefu19">
                   <img src="./skin/icon7.png">
                   <span>
                     复制安全码
@@ -209,18 +209,37 @@
                             </div>
                         </view>
                     </div>
-                    <script>
-                        const kefu19 = document.getElementById('kefu19');
-                        const kefudiv19 = document.getElementById('kefudiv19');
-                        kefu19.addEventListener('click', function(event) {
-                            event.preventDefault();
-                            kefudiv19.style.display = 'block';
-                        });
-                        const closeButtona19 = document.getElementById('guanbib19');
-                        const contenta19 = document.getElementById('kefudiv19');
-                        closeButtona19.addEventListener('click', function() {
-                            contenta19.style.display = 'none';
-                        });
+                                        <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const copyButton = document.getElementById('kefu19');
+    const textToCopy = 'a225595438e55d05';
+
+    if (copyButton) {
+        copyButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            const tempInput = document.createElement('input');
+            tempInput.value = textToCopy;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999);
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    alert('安全码已成功复制！');
+                } else {
+                    alert('复制失败，安全码请进入在线客服手动复制。');
+                }
+            } catch (err) {
+                console.error('复制失败:', err);
+                alert('复制失败，安全码请进入在线客服手动复制。');
+            }
+
+            document.body.removeChild(tempInput);
+        });
+    }
+});
+    
                     </script>
 
                     <div class="app-item">
